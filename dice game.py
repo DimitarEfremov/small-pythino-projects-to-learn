@@ -37,6 +37,7 @@ if game_code == 1:
 
     wins_player_1_counter = 0
     wins_player_2_counter = 0
+    draws_counter = 0
 
     for r in range(rounds):
         numb_player_1 = randrange(2, 12, 1)
@@ -52,9 +53,11 @@ if game_code == 1:
             wins_player_2_counter += 1
         else:
             print('Draw!')
+            draws_counter += 1
 
     print(f'{player_1} won {wins_player_1_counter} games.')
     print(f'{player_2} won {wins_player_2_counter} games.')
+    print(f'There were {draws_counter} draws.')
 
     if wins_player_1_counter > wins_player_2_counter:
         print(f'{player_1} is winner')
