@@ -3,15 +3,15 @@ from random import randrange
 # To be replace with question, what kind of game does the user want to play.
 print('Welcome! Do you you want to play a game of dice?')
 
-user_answer = input('Please select Y or N: ')
+user_answer = input('Please select Y or N: ').lower()
 game_code = 0
 counter_for_invalid_answers = 0
 
 while game_code == 0:
-    if user_answer == 'y' or user_answer == 'Y':
+    if user_answer == 'y':
         print('Lets play dice')
         game_code = 1
-    elif user_answer == 'n' or user_answer == 'N':
+    elif user_answer == 'n':
         # to be replace with if the user wants to play another game
         print('See you soon! ;)')
         exit(0)
@@ -28,12 +28,12 @@ if game_code == 1:
     rounds = int(input('How many rounds do you want to play, maximum round are 6: '))
 
     counter_for_invalid_answers = 0
-    while rounds < 1 or rounds > 6:
-        rounds = int(input('Rounds must be between 1 and 6: '))
-        if counter_for_invalid_answers > 5:
+    while not 1 <= rounds <= 6:
+        if counter_for_invalid_answers >= 4:
             print('Too many invalid answers')
             exit(0)
-        rounds = input('Rounds must be between 1 and 6: : ')
+        rounds = int(input('Rounds must be between 1 and 6: '))
+        counter_for_invalid_answers += 1
 
     wins_player_1_counter = 0
     wins_player_2_counter = 0
