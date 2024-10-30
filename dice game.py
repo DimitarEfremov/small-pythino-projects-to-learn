@@ -1,8 +1,9 @@
 from random import randrange
 
-# To be replace with question, what kind of game does the user want to play.
+# TODO To be replace with question, what kind of game does the user want to play.
 print('Welcome! Do you you want to play a game of dice?')
 
+# TODO extract the game in function
 user_answer = input('Please select Y or N: ').lower()
 game_code = 0
 counter_for_invalid_answers = 0
@@ -40,9 +41,9 @@ if game_code == 1:
     draws_counter = 0
 
     for r in range(rounds):
-        numb_player_1 = randrange(2, 12, 1)
+        numb_player_1 = randrange(1, 6, 1) + randrange(1, 6, 1)
         print(f'{player_1} rolled {numb_player_1}')
-        numb_player_2 = randrange(1, 6, 1)
+        numb_player_2 = randrange(1, 6, 1) + randrange(1, 6, 1)
         print(f'{player_2} rolled {numb_player_2}')
 
         if numb_player_1 > numb_player_2:
