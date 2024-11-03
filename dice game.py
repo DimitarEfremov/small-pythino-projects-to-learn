@@ -65,5 +65,5 @@ if game_code == 1:
     elif wins_player_2_counter > wins_player_1_counter:
         print(f'{player_2} is winner')
     else:
-        print('DRAW!!!!')
+        print('DRAW!!!')
 
